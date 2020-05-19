@@ -16,5 +16,6 @@ gcc lex.yy.c compound.tab.c
 ./a.out
 
 while (a<b) a=a+v;
-
+^C
 if (a<5) a=c+15;
+^C

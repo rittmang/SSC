@@ -5,12 +5,12 @@
     extern int yyparse();
 %}
 
-%token WH IF OP CP CMP SCASG ID NUM OPR
+%token WH IF OP CP CMP SC ASG ID NUM OPR
 
 %%
 start: swh | sif;
 swh: WH OP cmpn CP stmt             {printf("VALID SINGLE STATEMENT WHILE\n");}
-sif: IF OP cmpn CP stmt             {print("VALID SINGLE STATEMENT IF\n");}
+sif: IF OP cmpn CP stmt             {printf("VALID SINGLE STATEMENT IF\n");}
 cmpn: ID CMP ID | ID CMP NUM;
 stlst:stmt stlst | stmt;
 stmt: ID ASG ID OPR ID SC | ID ASG ID OPR NUM SC
@@ -22,7 +22,7 @@ int yyerror(char *str)
 {
     printf("%s",str);
 }
-main()
+int main()
 {
-    yyparse()
+    yyparse();
 }
